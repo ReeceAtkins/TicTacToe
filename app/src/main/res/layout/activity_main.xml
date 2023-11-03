@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewGame"
+        app:layout_constraintEnd_toEndOf="@+id/btnNewGame"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/btnNewGame" />
+
+    <Button
+        android:id="@+id/btnNewGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="244dp"
+        android:onClick="btnNewGameClick"
+        android:text="New Game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnTopRight"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginEnd="24dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnTopCenter" />
+
+    <Button
+        android:id="@+id/btnTopCenter"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintEnd_toStartOf="@+id/btnTopRight"
+        app:layout_constraintStart_toEndOf="@+id/btnTopLeft"
+        app:layout_constraintTop_toTopOf="@+id/btnTopLeft" />
+
+    <Button
+        android:id="@+id/btnTopLeft"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintBottom_toTopOf="@+id/btnMiddleLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
+
+    <Button
+        android:id="@+id/btnMiddleLeft"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintBottom_toTopOf="@+id/btnBottomLeft"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBottomLeft"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="372dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ButtonStyle" />
+
+    <Button
+        android:id="@+id/btnMiddleCenter"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintEnd_toStartOf="@+id/btnMiddleRight"
+        app:layout_constraintStart_toEndOf="@+id/btnMiddleLeft"
+        app:layout_constraintTop_toTopOf="@+id/btnMiddleLeft" />
+
+    <Button
+        android:id="@+id/btnMiddleRight"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginEnd="24dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnMiddleCenter" />
+
+    <Button
+        android:id="@+id/btnBottomCenter"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintEnd_toStartOf="@+id/btnBottomRight"
+        app:layout_constraintStart_toEndOf="@+id/btnBottomLeft"
+        app:layout_constraintTop_toTopOf="@+id/btnBottomLeft" />
+
+    <Button
+        android:id="@+id/btnBottomRight"
+        android:layout_width="45pt"
+        android:layout_height="45pt"
+        android:layout_marginEnd="24dp"
+        android:background="@color/customGrey"
+        android:onClick="btnClick"
+        android:text=" "
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:backgroundTint="@color/customGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBottomCenter"
+        tools:ignore="ButtonStyle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
