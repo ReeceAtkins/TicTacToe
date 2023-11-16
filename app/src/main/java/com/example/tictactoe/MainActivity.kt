@@ -1,6 +1,7 @@
 package com.example.tictactoe
 
 import android.annotation.SuppressLint
+import android.media.AsyncPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun newGame(buttons : Array<Button> ) {
         for (button in buttons) {
+            button.isEnabled = true
             button.setText("")
         }
 
@@ -47,9 +49,19 @@ class MainActivity : AppCompatActivity() {
 
     fun btnClick(view: View) {
         val buttonSelected = view as Button
+        var player = if (currentPlayerX) "X" else "O"
         playGame(buttonSelected)
 
         findViewById<TextView>(R.id.tvPlayer).text = if (currentPlayerX) "Player X's turn" else "Player O's turn"
+
+        if (checkIfBoardIsFull()) {
+            findViewById<TextView>(R.id.tvPlayer).text = "Game ended in a Tie"
+            disableButtons(buttons)
+        }
+        if (checkWinner(player)) {
+            findViewById<TextView>(R.id.tvPlayer).text = "Winner: player $player"
+            disableButtons(buttons)
+        }
     }
 
     private fun playGame(buttonSelected: Button) {
@@ -62,5 +74,44 @@ class MainActivity : AppCompatActivity() {
                 currentPlayerX = true
             }
         }
+    }
+
+    private fun disableButtons(buttons: Array<Button>) {
+        for (button in buttons) {
+            button.isEnabled = false
+        }
+    }
+
+    private fun checkWinner(player: String) : Boolean {
+
+        // Check rows
+        if (buttons[0].text == player && buttons[1].text == player && buttons[2].text == player ||
+            buttons[3].text == player && buttons[4].text == player && buttons[5].text == player ||
+            buttons[6].text == player && buttons[7].text == player && buttons[8].text == player) {
+            return true
+        }
+        // Check Columns
+        else if (buttons[0].text == player && buttons[3].text == player && buttons[6].text == player ||
+            buttons[1].text == player && buttons[4].text == player && buttons[7].text == player ||
+            buttons[2].text == player && buttons[5].text == player && buttons[8].text == player) {
+            return true
+        }
+        // Check diagonals
+        else if (buttons[0].text == player && buttons[4].text == player && buttons[8].text == player ||
+            buttons[2].text == player && buttons[4].text == player && buttons[6].text == player) {
+            return true
+        }
+
+        return false
+    }
+
+
+    private fun checkIfBoardIsFull() : Boolean {
+        var isBoardFull = true
+        for (button in buttons) {
+            if (button.text == "") isBoardFull = false
+        }
+
+        return isBoardFull
     }
 }
